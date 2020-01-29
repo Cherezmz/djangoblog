@@ -39,3 +39,7 @@ class Comment (models.Model):
     author = models.CharField(max_length=50)
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
+
+# render body with limitation of 50 signs
+# def snippet(self):
+#     return self.body[:50]+"..."
