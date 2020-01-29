@@ -3,10 +3,6 @@ from django.contrib.auth.models import User
 
 
 class Article (models.Model):
-    # STATUS_CHOICES = (
-    #     ('draft', 'Draft'),
-    #     ('published', 'Published'),
-    # )
     title = models.CharField(max_length=100)
     slug = models.SlugField(null=True)
     body = models.TextField()
@@ -14,6 +10,10 @@ class Article (models.Model):
     author = models.ForeignKey(
         User, default=None, on_delete=models.CASCADE, related_name='articles')
 
+    # STATUS_CHOICES = (
+    #     ('draft', 'Draft'),
+    #     ('published', 'Published'),
+    # )
 # tag = models.CharField(max_length=100)
 # link = models.CharField(max_length=100)
 # code_snippet = models.FilePathField(path="/img")
@@ -30,8 +30,8 @@ class Article (models.Model):
 #     ordering = ('-publish',)
 
 
-# def __str__(self):
-#     return self.title
+def __str__(self):
+    return self.title
 
 
 class Comment (models.Model):
