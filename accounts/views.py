@@ -31,10 +31,11 @@ def login_view(request):
         form = AuthenticationForm()
     return render(request, "accounts/login.html", {'form': form})
 
-    def logout_view(request):
-        if request.method == 'POST':
-            logout(request)
-            # will not work because the url name "list"
-            return redirect('articles:list')
+
+def logout_view(request):
+    if request.method == 'POST':
+        logout(request)
+        # will not work because the url name "list"
+        return redirect('articles:list')
         # else:
         #     print("Hello")
