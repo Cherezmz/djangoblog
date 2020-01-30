@@ -32,7 +32,9 @@ def login_view(request):
     return render(request, "accounts/login.html", {'form': form})
 
     def logout_view(request):
-        if request.method == "POST":
+        if request.method == 'POST':
             logout(request)
-            # will not work because the list
+            # will not work because the url name "list"
             return redirect('articles:list')
+        # else:
+        #     print("Hello")
