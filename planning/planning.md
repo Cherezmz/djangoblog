@@ -42,3 +42,7 @@ The models:
 - date
 - author (user)
 - body
+
+localhost:8000 - articles list
+http://127.0.0.1:8000/accounts/signup/ - signup
+http://127.0.0.1:8000/accounts/login/ - log in
