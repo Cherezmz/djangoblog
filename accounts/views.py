@@ -37,6 +37,6 @@ def logout_view(request):
         logout(request)
         # will not work because the url name "list"
         # article is appname
-        return redirect('blogapp:list')
-        # else:
-        #     print("Hello")
+    return redirect('articles:list')
+    # else:
+    #     print("Hello")
