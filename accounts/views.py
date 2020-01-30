@@ -8,8 +8,9 @@ def signup_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
             # log the user in (will do later)
+            login(request, user)
             return redirect('articles: list')
 # "articles is the name of the app from blogapp/urls
 # list is the name of path. I suppose that the error is connected with not rendering article (means no endpoint to show)
