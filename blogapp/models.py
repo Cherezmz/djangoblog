@@ -10,8 +10,9 @@ class Article (models.Model):
     author = models.ForeignKey(
         User, default=None, on_delete=models.CASCADE, related_name='articles')
 
-    def __str__(self):
-        return self.title
+
+def __str__(self):
+    return self.title
 
     # STATUS_CHOICES = (
     #     ('draft', 'Draft'),
@@ -32,18 +33,12 @@ class Article (models.Model):
 # class Meta:
 #     ordering = ('-publish',)
 
-    # def __str__(self):
-    #     return self.title
-
 
 class Comment (models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
     author = models.CharField(max_length=50)
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.author
 
 # render body with limitation of 50 signs
 # def snippet(self):
